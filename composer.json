@@ -1,0 +1,29 @@
+{
+    "name": "esperlos98/esauthenticationmongo",
+    "description": "this packagef for authentication with mongo",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Esperlos98\\EsauthenticationMongo\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=8.0.0"
+    },
+    "authors": [
+        {
+            "name": "mohsengreen1388",
+            "email": "mohsengreen1388@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Esperlos98\\EsauthenticationMongo\\Providers\\EsAuthenticationMongoServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+  
+}
