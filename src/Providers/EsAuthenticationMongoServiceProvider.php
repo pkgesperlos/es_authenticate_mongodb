@@ -25,6 +25,8 @@ class EsAuthenticationMongoServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(__DIR__ . '/../../routes/api.php');
 
         $router = $this->app->make(Router::class);
+        $router->aliasMiddleware('EsAuthenticationCheckEncrypt', EsAuthenticationCheckEncrypt::class);
         $router->pushMiddlewareToGroup('api', EsAuthenticationCheckEncrypt::class);
     }
 }
+
