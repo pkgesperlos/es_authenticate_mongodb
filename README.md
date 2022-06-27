@@ -89,6 +89,10 @@ fillable add api_token
     "username" => "email", //here change to anything
     "safeCode" => true, // for length code verfiy  four or five 
 
+## Verfiy 
+
+for code verfiy after register get your id with code verfiy send to yourdomine/api/es/v1/verfiy 
+  
 
 ## Routings
 > ### for login 
