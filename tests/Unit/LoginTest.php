@@ -16,13 +16,15 @@ class LoginTest extends TestCase
              "username"=> Str::random(20),
              "password"=> bcrypt("password"),
              "password_confirmation"=>  bcrypt("password"),
+             "phone" => random_int(9100000000,9199999999),
+             "code_verify"=> random_int(0000,999999),
              "email"=> Str::random(30)."@gmail.com",
              "api_token"=>base64_encode(Str::random(250)),  
          ]);
 
         $response = $this->json("post",env('APP_URL')."/es/api/v1/login",
-            ["username"=>$user->email,"password"=>"password"]);
-         
+            ["username"=>$user->phone,"password"=>"password"]);
+        
         return $this->assertTrue($response->status() == 200);
     }
 

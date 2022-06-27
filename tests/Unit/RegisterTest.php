@@ -15,6 +15,7 @@ class RegisterTest extends TestCase
         [
             "email"=>$this->faker()->email,
             "username"=>$this->faker()->name,
+            "phone" => random_int(9100000000,9199999999),
             "password_confirmation"=>"password",
             "password"=>"password"
         ]);

@@ -22,9 +22,6 @@ class RegisterController extends Controller
         $fileds = new FiledCreateUser($request);
         $user = User::create($fileds->fileds);
 
-        $token = $fileds->tokenWithoutEncrypt;
-
-        return response()->json(compact('token'))
-         ->header('Authorization', 'Bearer '.$token);
+        return response()->json($user->_id,200);
     }
 }

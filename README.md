@@ -47,16 +47,24 @@ fillable add api_token
  > if you  wanting can change login of email to username or anything
  > <p> and remove from Login email </p>
      
-    "rules" => [
+     "rules" => [
         "Register" => [
             'username' => 'required',
             'email' => 'required|email|unique:mongodb.users',
-            'password' => 'required|confirmed|min:8'
+            'password' => 'required|confirmed|min:8',
+            'phone' => 'required|unique:mongodb.users',
+            'status' => 'boolean',
+            'api_token' => 'unique:mongodb.users'
         ],
 
         "Login" => [
-            'username' => 'required|email', // if change of email remove email of here
+            'username' => 'required',
             'password' => 'required',
+        ],
+
+        "Verfiy"=>[
+            'id' => 'required',
+            'code' => 'required|numeric',
         ],
     ],
 
@@ -65,16 +73,21 @@ fillable add api_token
         "confirmed" => 602,
         "min" => 603,
         "email" => 604,
-        "unique" => 605
+        "unique" => 605,
+        "numeric" => 606,
     ],
 
     "userFileds" => [
         "username" => "username",
+        "phone" => "phone",
         "email" => "email",
         "password" => "password",
+        "code_verify" => "code_verify",
+        "status" => "status"
     ],
 
     "username" => "email", //here change to anything
+    "safeCode" => true, // for length code verfiy  four or five 
 
 
 ## Routings
@@ -85,3 +98,7 @@ fillable add api_token
 > ### for register  
 > <p>youerdomine/api/es/v1/register</p>
 > <p>parameters : email , username , password , password_confirmation</p>
+
+> ### for register  
+> <p>youerdomine/api/es/v1/verfiy</p>
+> <p>parameters : code , id </p>
