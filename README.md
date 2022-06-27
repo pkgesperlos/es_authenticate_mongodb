@@ -21,7 +21,7 @@
         ],
     ]
 
-## using middleware for exsample
+## using middleware for example
 > 
 <img src="./images/useApiMongo.png"
      alt="Markdown Monster icon"
@@ -30,7 +30,7 @@
 ## Config model User  /app/Models/User.php
 fillable add api_token
 
-## for exsample
+## for example
 > 
 <img src="./images/User.png"
      alt="Markdown Monster icon"
@@ -90,7 +90,6 @@ fillable add api_token
     "safeCode" => true, // for length code verfiy  four or five 
 
 ## Verfiy 
-
 for code verfiy after register get your id with code verfiy send to yourdomine/api/es/v1/verfiy 
   
 
@@ -103,6 +102,6 @@ for code verfiy after register get your id with code verfiy send to yourdomine/a
 > <p>youerdomine/api/es/v1/register</p>
 > <p>parameters : email , username , password , password_confirmation</p>
 
-> ### for register  
+> ### for verfiy  
 > <p>youerdomine/api/es/v1/verfiy</p>
 > <p>parameters : code , id </p>
